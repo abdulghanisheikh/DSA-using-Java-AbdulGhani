@@ -1,3 +1,4 @@
+import java.util.*;
 class Arrays {
     static int binarySearch(int a[], int k) {
         int low = 0;
@@ -63,6 +64,19 @@ class Arrays {
         return 0;
     }
 
+    private static void sortArray(int a[]) {
+        for(int i=0; i<a.length-1; i++) {
+            int smallest = i;
+            for(int j=i+1; j<a.length; j++) {
+                if(a[smallest] > a[j]) {
+                    smallest = j;
+                }
+            }
+            int temp = a[i];
+            a[i] = a[smallest];
+            a[smallest] = temp;
+        }
+    }
     static int secondMaxElement(int a[]) {
         sortArray(a);
         System.out.print("second max element: ");
@@ -142,65 +156,68 @@ class Arrays {
             }
             System.out.println();
         }
-        System.out.println("total pairs = " + totalPairs); //total pairs = n(n-1)/2
+        System.out.println("total pairs = " + totalPairs); // total pairs = n(n-1)/2
     }
 
-    private static void printSubArrays(int a[]) {  //time complexity = O(n^3)
-        int totalSubArrays = 0;
+    private static void printSubArray(int a[]) {
         for(int i=0; i<a.length; i++) {
             for(int j=i; j<a.length; j++) {
                 for(int k=i; k<=j; k++) {
                     System.out.print(a[k] + " ");
                 }
                 System.out.println();
-                totalSubArrays++;
             }
-            System.out.println();
         }
-        System.out.println("total sub arrays = " + totalSubArrays); //total subarrays = n(n+1)/2; 
     }
-
-    private static void maxSubArraySum(int a[]) {  
+    private static void maxSumOfSubArray(int a[]) {
         int sum = 0;
         int maxSum = Integer.MIN_VALUE;
+        // int prefix[] = new int[a.length];
+        // prefix[0] = a[0];
+        // // calculating prefix array
+        // for(int i=1; i<prefix.length; i++) {
+        //     prefix[i] = prefix[i-1] + a[i];
+        // }
+        // for(int i=0; i<a.length; i++) {
+        //     int start = i;
+        //     for(int j=i; j<a.length; j++) {
+        //         int end = j;
+        //         sum = start == 0 ? prefix[end] : prefix[end] - prefix[start-1];
+        //         if(sum > maxSum) {
+        //             maxSum = sum;
+        //         }
+        //     }
+        // }
         for(int i=0; i<a.length; i++) {
-            int start = i; 
             for(int j=i; j<a.length; j++) {
-                int end = j;
-                for(int k=start; k<=end; k++) {
+                sum = 0;
+                for(int k=i; k<=j; k++) {
                     sum = sum + a[k];
-                }
-                System.out.println(sum);
-                if(sum > maxSum) {
-                    maxSum = sum;
+                    if(maxSum < sum) {
+                        maxSum = sum;
+                    }
                 }
             }
         }
-        System.out.println("maximum sum = " + maxSum);
+        System.out.println(maxSum);
     }
+
+    private static int kadanes(int a[]) { // O(n)
+        int sum = 0;
+        int maxSum = a[0];
+        for(int i=0; i<a.length; i++) {
+            sum = sum + a[i];
+            maxSum = Math.max(maxSum, sum);
+            // if sum is negative re-assign sum = 0
+            if(sum < 0) {
+                sum = 0;
+            }
+        }
+        return maxSum;
+    }
+
     public static void main(String[] args) {
-        int numbers[] = {1, -2, 6, -1, 3};
-        maxSubArraySum(numbers);
+        int a[] = {-1};
+        System.out.print("max sum = " + kadanes(a));
     }
 }
-// 1  sum = 1
-// 1 -2 sum = -1
-// 1 -2 6 sum = 5
-// 1 -2 6 -1 sum = 4
-// 1 -2 6 -1 3 sum = 7
-
-// -2 sum = -2
-// -2 6 sum = 4
-// -2 6 -1 sum = 3
-// -2 6 -1 3 sum = 6
-
-// 6 sum = 6
-// 6 -1 sum = 5
-// 6 -1 3 sum = 8
-
-// -1 sum = -1
-// -1 3 sum = 2
-
-// 3 sum = 3
-
-// maximum sum = 8

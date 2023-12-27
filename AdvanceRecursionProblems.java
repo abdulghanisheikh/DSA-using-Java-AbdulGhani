@@ -69,6 +69,7 @@ public class AdvanceRecursionProblems {
         printSubsets(n-1, subset);
     }
     public static void main(String[] args) {
-        System.out.println("hello world");
+        ArrayList<Integer> subset = new ArrayList<>();
+        printSubsets(3, subset);
     }
 }
