@@ -1,3 +1,4 @@
+import java.util.*;
 import java.util.ArrayList;
 public class AdvanceRecursionProblems {
     public static void printPermutation(String str, String permutation) {
@@ -62,7 +63,7 @@ public class AdvanceRecursionProblems {
             return;
         }
         //coming in the subset
-        subset.add(n);
+        // subset.add(n);
         printSubsets(n-1, subset);
         //not coming in the subset
         subset.remove(subset.size()-1);

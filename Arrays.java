@@ -193,9 +193,7 @@ class Arrays {
                 sum = 0;
                 for(int k=i; k<=j; k++) {
                     sum = sum + a[k];
-                    if(maxSum < sum) {
-                        maxSum = sum;
-                    }
+                    maxSum = Math.max(maxSum, sum);
                 }
             }
         }
@@ -217,8 +215,35 @@ class Arrays {
         return maxSum;
     }
 
+    private static int trappedRainwater(int height[]) {
+        int n = height.length;
+        // calculate left max array
+        int leftMax[] = new int[n];
+        // corner case
+        leftMax[0] = height[0];
+        for(int i=1; i<n ; i++) {
+            leftMax[i] = Math.max(height[i], leftMax[i-1]);
+        }
+        // calculate right max array
+        int rightMax[] = new int[n];
+        // corner case
+        rightMax[n-1] = height[n-1];
+        for(int i=n-2; i>=0; i--) {
+            rightMax[i] = Math.max(height[i], rightMax[i+1]);
+        }
+
+        // calculating trapped water for each bar
+        int trappedWater = 0;
+        for(int i=0; i<height.length; i++) {
+            int waterLevel = Math.min(leftMax[i], rightMax[i]);
+            trappedWater = trappedWater + (waterLevel - height[i])*1;
+        }
+        return trappedWater;
+    }
+
     public static void main(String[] args) {
-        int a[] = {-1};
-        System.out.println("max sum = " + kadanes(a));
+        int a[] = {4};
+        int volume = trappedRainwater(a);
+        System.out.println("total volume of trapped rain water = " + volume);
     }
 }
