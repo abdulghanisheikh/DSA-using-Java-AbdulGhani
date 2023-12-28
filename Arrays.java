@@ -204,7 +204,6 @@ class Arrays {
 
     private static int kadanes(int a[]) { // O(n)
         int sum = 0;
-        
         int maxSum = a[0];
         for(int i=0; i<a.length; i++) {
             sum = sum + a[i];
@@ -213,7 +212,7 @@ class Arrays {
             // if sum is negative re-assign sum = 0.
             if(sum < 0) {
                 sum = 0;
-            }
+            } 
         }
         return maxSum;
     }
