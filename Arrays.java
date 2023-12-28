@@ -204,11 +204,13 @@ class Arrays {
 
     private static int kadanes(int a[]) { // O(n)
         int sum = 0;
+        
         int maxSum = a[0];
         for(int i=0; i<a.length; i++) {
             sum = sum + a[i];
+            // max(a,b) = returns greatest of two numbers.
             maxSum = Math.max(maxSum, sum);
-            // if sum is negative re-assign sum = 0
+            // if sum is negative re-assign sum = 0.
             if(sum < 0) {
                 sum = 0;
             }
@@ -218,6 +220,6 @@ class Arrays {
 
     public static void main(String[] args) {
         int a[] = {-1};
-        System.out.print("max sum = " + kadanes(a));
+        System.out.println("max sum = " + kadanes(a));
     }
 }
