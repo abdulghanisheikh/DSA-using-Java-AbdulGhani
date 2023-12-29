@@ -215,7 +215,7 @@ class Arrays {
         return maxSum;
     }
 
-    private static int trappedRainwater(int height[]) {
+    private static int trappedRainwater(int height[]) { // O(n)
         int n = height.length;
         // calculate left max array
         int leftMax[] = new int[n];
@@ -236,14 +236,45 @@ class Arrays {
         int trappedWater = 0;
         for(int i=0; i<height.length; i++) {
             int waterLevel = Math.min(leftMax[i], rightMax[i]);
+            // trapped water = (water level - height) * width
             trappedWater = trappedWater + (waterLevel - height[i])*1;
         }
         return trappedWater;
     }
 
+    private static int buySellStocks(int price[]) {
+        int n = price.length;
+        int maxProfit = 0;
+        int profit;
+        int buyPrice = price[0];
+        for(int i=0; i<n; i++) {
+            int sellPrice = price[i];
+            if(buyPrice < sellPrice) {
+                profit = sellPrice - buyPrice;
+                maxProfit = Math.max(maxProfit, profit);
+            } else {
+                buyPrice = sellPrice;
+            }
+        }
+        return maxProfit;
+    }
+    private static int[] prefixSumArray(int a[]) {  // O(n)
+        int n = a.length;
+        int prefixSum[] = new int[n];
+        for(int i=0; i<n; i++) {
+            if(i == 0) {
+                prefixSum[i] = a[0];
+            } else {
+                prefixSum[i] = prefixSum[i-1] + a[i];
+            }
+        }
+        return prefixSum;
+    }
     public static void main(String[] args) {
-        int a[] = {4};
-        int volume = trappedRainwater(a);
-        System.out.println("total volume of trapped rain water = " + volume);
+        int a[] = {10, 20, 30, 15, 10};
+        int prefixSum[] = prefixSumArray(a);
+        for(int i=0; i<prefixSum.length; i++) {
+            System.out.print(prefixSum[i] + " ");
+        }
     }
 }
