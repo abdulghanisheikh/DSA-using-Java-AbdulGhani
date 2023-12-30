@@ -109,8 +109,42 @@ public class HashMapQuestions {
         }
         System.out.println("number of subarrays of sum k = " + count);
     }
+
+    private static int[] twoSum(int a[], int target) {
+        // map<target - a[i], index of a[i]>
+        // compliment = target - a[i]
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int n = a.length;
+        for(int i=0; i<n; i++) {
+            int compliment = target - a[i];
+            if(map.containsKey(compliment)) {
+                return new int[] {map.get(compliment), i};
+            } 
+            map.put(a[i], i);
+        }
+        return a;
+    }
+
+    private static int missingNumber(int a[]) {
+        HashSet<Integer> set = new HashSet<>();
+        int n = a.length;
+        for(int i=0; i<=n; i++) { 
+            set.add(i);
+        }
+        for(int i=0; i<n; i++) {
+        if(set.contains(a[i])) {
+            set.remove(a[i]);
+        } 
+    }
+    int ans = -1;
+    for(Integer e : set) {
+        ans = e;
+    } 
+    return ans;
+}
     public static void main(String[] args) {
-        int a[] = {10, 2, -2, -20, 10};
-        sumEqualtoK(a, -10);
+       int a[] = {3,0,1};
+       int missing = missingNumber(a);
+       System.out.println(missing);
     }
 }

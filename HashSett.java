@@ -29,7 +29,7 @@ public class HashSett {
         set.add(4);
         set.add(3);
 
-        // // iterating on set using Iterator
+        //  Iterating on set using Iterator
         // Iterator i = set.iterator();
         // while(i.hasNext()) {
         //     System.out.print(i.next() + " ");
