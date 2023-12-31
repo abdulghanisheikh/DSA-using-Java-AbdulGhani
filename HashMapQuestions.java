@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.HashMap;
-
+import java.util.Collections;
 public class HashMapQuestions {
     private static void majorityElement(int a[]) { //O(n)
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -111,7 +111,7 @@ public class HashMapQuestions {
     }
 
     private static int[] twoSum(int a[], int target) {
-        // map<target - a[i], index of a[i]>
+        // map<compliment, index>
         // compliment = target - a[i]
         HashMap<Integer, Integer> map = new HashMap<>();
         int n = a.length;
@@ -143,8 +143,6 @@ public class HashMapQuestions {
     return ans;
 }
     public static void main(String[] args) {
-       int a[] = {3,0,1};
-       int missing = missingNumber(a);
-       System.out.println(missing);
+        
     }
 }
