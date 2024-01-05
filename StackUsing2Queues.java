@@ -31,8 +31,7 @@ public class StackUsing2Queues
             }
             int top = -1;
 
-            if(!q1.isEmpty())
-            {
+            if(!q1.isEmpty()) {
                 while(!q1.isEmpty())
                 {
                     top = q1.remove();
@@ -42,8 +41,7 @@ public class StackUsing2Queues
                     }
                     q2.add(top);
                 }
-            } else
-            {
+            } else {
                 while(!q2.isEmpty()) 
                 {
                     top = q2.remove();

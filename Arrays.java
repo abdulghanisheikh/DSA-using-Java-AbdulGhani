@@ -37,7 +37,7 @@ class Arrays {
 
     static int findUniqueElement(int arr[]) {
         int ans = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i=0; i<arr.length; i++) {
             ans = ans ^ arr[i];
         }
         return ans;
@@ -45,13 +45,12 @@ class Arrays {
 
     static int findDuplicate(int arr[]) {
         int ans = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i=0; i <arr.length; i++) {
             ans = ans ^ arr[i];
         }
-        for (int i = 1; i < arr.length; i++) {
+        for (int i=1; i<arr.length; i++) {
             ans = ans ^ i;
         }
-
         return ans;
     }
 
@@ -199,6 +198,10 @@ class Arrays {
         }
         System.out.println(maxSum);
     }
+
+    // Kadane's Algo = we will carry the subarray till it gives the positive sum and
+    //                 the subarray having the negative sum will be discarded.
+    //                 (assigning sum = 0 in code)  
 
     private static int kadanes(int a[]) { // O(n)
         int sum = 0;

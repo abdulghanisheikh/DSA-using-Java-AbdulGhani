@@ -10,7 +10,7 @@ public class CountInversion {
         }
         return count;
     }
-    public static void printArr(int arr[], int index ,int len) {
+    public static void printArr(int arr[], int index, int len) {
         if(index == arr.length) {
             return;
         }
@@ -26,7 +26,7 @@ public class CountInversion {
     }
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
-        printArr(arr, 0, arr.length-1);
+        printArr(arr, 0, arr.length);
     }
     
 }

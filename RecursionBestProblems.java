@@ -85,9 +85,11 @@ public class RecursionBestProblems {
     }
     public static void uniqueSubsequence(String str, int index, String newString, HashSet<String> set) {
         if(index == str.length()) {
+            // subsequence already exists
             if(set.contains(newString)) {
                 return;
             }
+            // subsequence coming first time
             else {
                 System.out.println(newString);
                 set.add(newString);
@@ -113,7 +115,7 @@ public class RecursionBestProblems {
     }
 
     public static void main(String[] args) {
-        String str = "4";
-        keypadComb(str, 0, "");
+        String str = "abc";
+        subsequence(str, 0, "");
     }
 }

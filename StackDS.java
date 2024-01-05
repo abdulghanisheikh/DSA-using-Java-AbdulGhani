@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class StackDS {
     public static void pushAtBottom(Stack<Integer> s, int data) {
         if(s.isEmpty()) {
@@ -82,7 +81,7 @@ public class StackDS {
         return false;
     }
     public static void main(String[] args) {
-        String str = "((a+b))";
+        String str = "(a+b)";
         System.out.println(isDuplicate(str));
     }
 }

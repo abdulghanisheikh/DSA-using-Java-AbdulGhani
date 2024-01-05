@@ -12,7 +12,7 @@ public class Recursion7 {
     
     static void solve(String str, ArrayList<String> ans, ArrayList<String> output, int index) {
         if(index >= str.length()) {
-            if(output.length() > 0) {
+            if(output.size() > 0) {
                 ans.add(output);
             }
             return;

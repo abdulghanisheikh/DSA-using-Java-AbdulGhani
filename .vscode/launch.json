@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RotateArray",
+            "request": "launch",
+            "mainClass": "RotateArray",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "LL",
+            "request": "launch",
+            "mainClass": "LL",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "RecursionBestProblems",
+            "request": "launch",
+            "mainClass": "RecursionBestProblems",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "StackDS",
+            "request": "launch",
+            "mainClass": "StackDS",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "QueueDS",
+            "request": "launch",
+            "mainClass": "QueueDS",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "BinarySearch1",
+            "request": "launch",
+            "mainClass": "BinarySearch1",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "BitwiseOperators",
+            "request": "launch",
+            "mainClass": "BitwiseOperators",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
