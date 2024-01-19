@@ -273,11 +273,21 @@ class Arrays {
         }
         return prefixSum;
     }
-    public static void main(String[] args) {
-        int a[] = {10, 20, 30, 15, 10};
-        int prefixSum[] = prefixSumArray(a);
-        for(int i=0; i<prefixSum.length; i++) {
-            System.out.print(prefixSum[i] + " ");
+
+    private static int removeDuplicate(int a[]) {  // O(n)
+        int ptr = 0;
+        for(int i=1; i<a.length; i++) {
+            if(a[ptr] != a[i]) {
+                a[ptr+1] = a[i];
+                ptr++;
+            }
         }
+        return ptr+1;
+    }
+    public static void main(String[] args) {
+        int oneDArray[] = {1,2,3};
+        int twoDArray[][] = {{1,2,3},{4,5,6}};
+        System.out.println(oneDArray[0]);  
+        System.out.println(twoDArray[0][0]);  
     }
 }

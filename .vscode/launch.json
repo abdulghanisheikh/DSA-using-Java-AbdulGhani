@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "QueueUsingLL",
+            "request": "launch",
+            "mainClass": "QueueUsingLL",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "StackUsingArray",
+            "request": "launch",
+            "mainClass": "StackUsingArray",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "StackUsingLL",
+            "request": "launch",
+            "mainClass": "StackUsingLL",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "Strings",
+            "request": "launch",
+            "mainClass": "Strings",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "Recursion1",
+            "request": "launch",
+            "mainClass": "Recursion1",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
+            "name": "Arrays",
+            "request": "launch",
+            "mainClass": "Arrays",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
             "name": "RotateArray",
             "request": "launch",
             "mainClass": "RotateArray",

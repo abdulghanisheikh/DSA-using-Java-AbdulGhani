@@ -91,7 +91,5 @@ public static void main(String[] args) {
     list.addLast(3);
     list.addLast(4);
     list.printList();
-    
-
-}
+    }
 }

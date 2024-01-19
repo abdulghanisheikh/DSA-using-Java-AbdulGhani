@@ -26,11 +26,8 @@ public class Recursion1 {
         printCounting(n-1);
         System.out.print(n + " ");
     }
-
     public static void main(String[] args) {
-        // printCounting(10);
-        System.out.println(findFactorial(5));
-        
+        // todo
     }
 }
 

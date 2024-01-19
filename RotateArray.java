@@ -5,7 +5,8 @@ public class RotateArray {
     // step 2 = [6,7,1,2,3,4,5]
     // step 3 = [5,6,7,1,2,3,4] = output array
     private static void rotateArray(int a[], int k) { // time complexity = O(n)
-        // reverse array
+        k = k % a.length;                             // space complexity = O(1)
+        // reverse array                      
         reverseArray(a, 0, a.length-1);
         // reverse array again from 0 to k-1
         reverseArray(a, 0, k-1);
@@ -16,7 +17,6 @@ public class RotateArray {
             System.out.print(a[i] + " ");
         }
     }
-
     private static void reverseArray(int a[], int i, int j) {
         while(i <= j) {
             int temp = a[i];
@@ -26,7 +26,7 @@ public class RotateArray {
         }
     }
     public static void main(String[] args) {
-        int a[] = {1,2,3,4,5,6,7};
+        int a[] = {1, 2, 3, 4, 5, 6, 7};
         rotateArray(a, 3);
     }
 }

@@ -23,9 +23,9 @@ public class HashMapQuestions {
         }
     }
 
-    //Anagram = its a word or phrase formed by rearranging the letters of a 
-    //          different words or phrase, typically using all the 
-    //          original letters exactly once.
+    // Anagram = its a word or phrase formed by rearranging the letters of a 
+    //           different words or phrase, typically using all the 
+    //           original letters exactly once.
     //           s = "race" t = "care" -> True
     //           s = "tulip" t = "lipid" -> False
 
@@ -142,7 +142,5 @@ public class HashMapQuestions {
     } 
     return ans;
 }
-    public static void main(String[] args) {
-        
-    }
+    public static void main(String[] args) {}
 }

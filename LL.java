@@ -58,26 +58,6 @@ public class LL {
         return size;
     }
 
-    public Node reverseIterate(Node head) {
-        if(head == null && head.next == null) {
-            return head;
-        }
-
-        Node prev = head;
-        Node curr = prev.next;
-        while(curr != null) {
-            Node nextNode = curr.next;
-            curr.next = prev;
-
-            prev = curr;
-            curr = nextNode;
-        }
-        head.next = null;
-        head = prev;
-
-        return head;
-    } 
-
     public Node reverseRecursive(Node head) {
         if(head == null || head.next == null) {
             return head;
@@ -86,7 +66,6 @@ public class LL {
         Node newHead = reverseRecursive(head.next);
         head.next.next = head;
         head.next = null;
-
         return newHead;
     }
 
@@ -296,16 +275,31 @@ public class LL {
             }
         }
     }
+
+    private Node reverseIterate(Node head) {
+        if(head == null || head.next == null) {
+            return head;
+        }
+        Node prev = null;
+        Node curr = head;
+        while(curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode; 
+        }
+        return prev;
+    }
+
 public static void main(String[] args) {
     LL list = new LL();
     list.addLast(1);
     list.addLast(2);
     list.addLast(3);
-    list.addLast(3);
     list.addLast(4);
-    list.addLast(4);
+    list.addLast(5);
     list.printList();
-    list.removeDuplicate();
+    list.head = list.reverseIterate(list.head);
     list.printList();
    }
 }
