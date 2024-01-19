@@ -27,13 +27,16 @@ public class QueueUsingLL {
     }
     private int deQueue() {
         if(isEmpty()) {
-            System.out.println("underflow");
-            return -1;
+        System.out.println("underflow");
+        return -1;
+        } 
+        int remove = front.data;
+        if(front == rear) {
+            front = rear = null;
         } else {
-            int val = front.data;
             front = front.next;
-            return val;
         }
+        return remove;
     }
     private int peek() {
         if(isEmpty()) {
