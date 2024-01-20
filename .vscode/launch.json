@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "QuickSort",
+            "request": "launch",
+            "mainClass": "QuickSort",
+            "projectName": "DSA-using-Java-AbdulGhani_fc0e1fb6"
+        },
+        {
+            "type": "java",
             "name": "QueueUsingLL",
             "request": "launch",
             "mainClass": "QueueUsingLL",
