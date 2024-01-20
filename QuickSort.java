@@ -7,7 +7,7 @@ public class QuickSort {
     // best and average case = O(nlog(n))
     // worst case = O(n^2) (when list is already sorted)
 
-    // Space complexity = O(log(n)) (due to recursive algorithm)
+    // Space complexity = O(log(n)) (due to recursion)
 
     private static int partition(int a[], int start, int end) {
         int pivot = a[end];
@@ -27,11 +27,10 @@ public class QuickSort {
         return i;
     }
     private static void quickSort(int a[], int start, int end) {
-        int pivot;
         if(start < end) {
-        pivot = partition(a, start, end);
-        quickSort(a, start, pivot-1);
-        quickSort(a, pivot+1, end);
+        int pivot = partition(a, start, end);
+        quickSort(a, start, pivot-1); // sort left subarray
+        quickSort(a, pivot+1, end); // sort right subarray
         }
     }
     public static void main(String[] args) {
